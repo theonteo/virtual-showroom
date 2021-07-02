@@ -1,8 +1,5 @@
-import react from "react";
-
 //store project related images
 import CardImg from '../images/img-9.jpg'
-import CardImg2 from '../images/img-8.jpg'
 import CardItem from "./CardItem"
 import './Cards.css'
 function Projects()
