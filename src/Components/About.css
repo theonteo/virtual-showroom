@@ -1,0 +1,28 @@
+.AboutContainer
+{
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr);
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.LeftPanel
+{
+    width: 100%;
+    height: 100%;
+}
+.RightPanel
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 123, 0);
+}
+.Title
+{
+    font-weight: bold;
+    font-size: 50px;
+}
+.SubText
+{
+    font-size: 14px;
+}
