@@ -1,13 +1,13 @@
 .SideBar
 {
+    pointer-events:none;
     display: flex;
     overflow-y: hidden;
-    width: 90%;
+    width: 75%;
 
-   
-    margin: 0%;
+    margin: 10%;
     position:absolute;
-    justify-content: center;
+    justify-content: left;
     align-content: center;
     text-align: left;
 }

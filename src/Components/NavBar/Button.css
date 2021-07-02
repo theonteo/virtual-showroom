@@ -1,5 +1,5 @@
 :root{
-    --primary : rgb(255, 217, 0);
+    --primary : rgb(255, 213, 77);
 }
 
 .btn{
@@ -24,7 +24,7 @@
     
     border-radius: 30px;
     background-color:transparent;
-    color:rgb(255, 217, 0);
+    color:rgb(255, 213, 77);
     padding:8px 20px;
     border:2px solid var(--primary);
     transition :all 0.3s ease-out;
@@ -49,7 +49,7 @@
 .btn--medium:hover,
 .btn--large:hover
 {
-    background:rgb(255, 217, 0);
+    background:rgb(255, 213, 77);
     color:rgb(0, 0, 0);
     transition:all 0.3s ease-out;
 }

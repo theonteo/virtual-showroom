@@ -5,19 +5,19 @@ function LandingTitle()
  {
     return (
         <div>
-            <div className = 'Title-colored'>Hi, my name is</div>
+            <div className = 'Title-colored'>Finally, its time for the</div>
             <div className = 'Title-heading'>
-                Theon Teo
+                GSS
             </div>
             <div className = 'Title-SubHeading'>
                
-                 Software Engineer
+                 Enjoy Up to 50% Off
+            </div>
+            <div className = 'Title-subtext2'>
+            6 June - 7 July
             </div>
             <div className = 'Title-subtext'>
-            Starting out from game development, I am currently pursuing software engineering / development with a focus in front-end aspects. My interests are in Front-End Graphics Rendering / Technical Art and Full-stack development.
-
-During my free-time from schoolwork, I enjoy exploring the different aspects of frontend web/app development. 
-
+            The decorative accent to elevate your lifestyle
             </div>
         </div>
     )

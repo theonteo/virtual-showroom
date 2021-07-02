@@ -1,10 +1,7 @@
 import React from 'react'
 import LandingTitle from './LandingTitle'
 import Scene1 from './Scenes/Scene1'
-import Scene2 from './Scenes/Scene2'
-import Scene3 from './Scenes/Scene3'
-import Projects from './Projects'
-import About from './About'
+
 import './Landing.css'
 
 
@@ -19,18 +16,8 @@ function Landing()
                     <LandingTitle/>
                 </div>
             </div>
-            <div className = "RenderWindow">
-                <Scene2/>
-                <div className = "SideBar">
-                    <About/>
-                </div>
-            </div>
-            <div className = "RenderProjects">
-                <Scene3/>
-                <div className = "Projects">
-                    <Projects/>
-                </div>
-            </div>
+
+    
         </div>
     )
 }

@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import './NavBar.css'
 import {Button} from './Button'
 
-
 function NavBar() {
 
     const [click,setClick] = useState(false);
@@ -33,6 +32,7 @@ function NavBar() {
         <nav className = "navbar">
             <div className = "navbar-container">
                 <Link to="/" className="navbar-logo" onClick ={ closeMobileMenu}>
+                    THE BIRCH
                 <i className ='fab fa-typo3'></i>                    
                 </Link>
 
