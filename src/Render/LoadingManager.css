@@ -1,0 +1,33 @@
+.loading-container
+{
+
+    position:fixed;
+    z-index: 999;
+}
+.loading-background
+{
+    display:flex;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width:100vw;
+    height:100vh;
+    background-color: rgb(17, 17, 17);
+}
+.progress {
+  
+    background: #333;
+    border-radius: 13px;
+    height: 5px;
+    width: 300px;
+}
+
+.progress2 {
+    content: '';
+    display: block;
+    background: rgb(0, 255, 128);
+    width: 9999;
+    height: 100%;
+    border-radius: 9px;
+}

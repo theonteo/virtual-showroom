@@ -12,9 +12,11 @@ This project contains portfolio / web-mobile responsive application
 import * as THREE from "three";
 
 //renderer related
-import Model from "../../Render/Model";
+import CloudModel from "../../Render/CloudModel";
 import Scene from "../../Render/Scene";
 
+
+import { Vector3 } from "three";
 
 /******************************************************************************/
 /*!
@@ -29,11 +31,8 @@ class Scene2 extends Scene
         super(_options);
   
         //add main room model
-        new Model({
-            modelLink:'/room.obj',
-            matLink:'/room.mtl',
-            position: new THREE.Vector3(0,3,0),
-            scale: new THREE.Vector3(2,2,2),
+        this.cloud = new CloudModel({
+            //texture:img,
             scene : this.scene});
         
         this.startRender();
@@ -51,10 +50,13 @@ Update()
   this.pageLerp = t * 0.0045;
 
   //modify camera position
-  let disty = -9.0 - this.pageLerp * 1.5;
-  let distx = 6.0 - this.pageLerp * 2;
-  let distz = -9.0 + this.pageLerp * 2;
-  this.newCamera.position.y+=1;
+ // let disty = -9.0 - this.pageLerp * 1.5;
+  //let distx = 6.0 - this.pageLerp * 2;
+  //let distz = -9.0 + this.pageLerp * 2;
+  let distx =0;
+  let disty =0;
+  let distz =1000;
+  //this.newCamera.position.y+=1;
 
   //position animation
   this.newCamera.setPosition
@@ -62,9 +64,12 @@ Update()
     new THREE.Vector3(distx,disty,distz),0.05));
 
   //rotation animation
-  this.newCamera.setRotation(
-    this.newCamera.rotation.lerp(
-      new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.2,-0.2),0.05));
+  //this.newCamera.setRotation(
+   // this.newCamera.rotation.lerp(
+     // new THREE.Vector3(0.0,0),0.00));
+    if(this.cloud.loaded)
+      this.cloud.updateModel(t);
+    this.newCamera.threeCamera.lookAt(new Vector3(0,0,0));
   }
 
 }

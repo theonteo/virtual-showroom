@@ -1,25 +1,23 @@
-import React from 'react'
+import {React} from 'react'
 import './LandingTitle.css'
 import './font.css'
+import {Button} from '../Components/NavBar/Button'
 function LandingTitle()
  {
     return (
-        <div>
-            <div className = 'Title-colored'>Finally, its time for the</div>
+        
+        <div className = 'Title-group'>
             <div className = 'Title-heading'>
-                GSS
+                ../TheonTeo/
             </div>
-            <div className = 'Title-SubHeading'>
+            <div className = 'Title-colored'>
                
-                 Enjoy Up to 50% Off
+                 Software Engineer
             </div>
-            <div className = 'Title-subtext2'>
-            6 June - 7 July
-            </div>
-            <div className = 'Title-subtext'>
-            The decorative accent to elevate your lifestyle
-            </div>
+          
+            <Button buttonStyle='btn--outline'> Contact</Button>
         </div>
+        
     )
 }
 

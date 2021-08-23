@@ -1,5 +1,5 @@
 :root{
-    --primary : rgb(255, 213, 77);
+    --primary : #64ffda;
 }
 
 .btn{
@@ -22,9 +22,9 @@
 .btn--outline
 {
     
-    border-radius: 30px;
+
     background-color:transparent;
-    color:rgb(255, 213, 77);
+    color:#64ffda;
     padding:8px 20px;
     border:2px solid var(--primary);
     transition :all 0.3s ease-out;
@@ -34,22 +34,22 @@
 .btn--medium{
     
     padding: 8px 20px;
-    font-size: 20px;
-    font-family: Roboto;
+    font-size:15px;
+    font-family: monospace;
     font-weight: 100;
-    letter-spacing: 3px;
+
 }
 
 .btn--large{
     
     padding:12px 26px;
-    font-size:20px;
+    font-size:15px;
 }
 
 .btn--medium:hover,
 .btn--large:hover
 {
-    background:rgb(255, 213, 77);
+    background:#64ffda;
     color:rgb(0, 0, 0);
     transition:all 0.3s ease-out;
 }

@@ -10,22 +10,11 @@ function Footer()
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Enter your email for the latest updates
+          Wanna get in touch?
         </p>
-        <p className='footer-subscription-text'>
-          Contact me for for more information
-        </p>
-        <div className='input-areas'>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
-          </form>
-        </div>
+
+            <Button buttonStyle='btn--outline'>Contact Me</Button>
+         
       </section>
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
@@ -51,11 +40,11 @@ function Footer()
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              THE BIRCH
+              THEON
               <i class='fab fa-typo3' />
             </Link>
           </div>
-          <small class='website-rights'>THE BIRCH © 2021</small>
+          <small class='website-rights'>Theon © 2021</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'

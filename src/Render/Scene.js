@@ -11,7 +11,7 @@ This project contains portfolio / web-mobile responsive application
 /*****************************************************************************/
 import React, { Component } from "react";
 import * as THREE from "three";
-import OrbitControls from "three-orbitcontrols";
+
 //renderer related
 import './Scene.css'
 import Camera from "./Camera";
@@ -49,8 +49,6 @@ class Scene extends Component
       rotation: new THREE.Vector3(0.3,2.7,-0.2),
       width : width, 
       height : height});
-      
-  
   }
 /******************************************************************************/
 /*!
@@ -64,15 +62,14 @@ class Scene extends Component
 
     //Add Renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setClearColor("#263238");
+    this.renderer.setClearColor("#1a1a1a");
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
 
     //add Camera
     this.setCamera( width,height);
-    new OrbitControls( this.newCamera.threeCamera, this.renderer.domElement );
     //add lighting here
-    const ambient = new THREE.AmbientLight(0xf5e0ff , 1.35  , 0);
+    const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
     this.scene.add(ambient);
   }
 

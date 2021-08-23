@@ -1,29 +1,24 @@
 .SideBar
 {
-    pointer-events:none;
     display: flex;
     overflow-y: hidden;
-    width: 75%;
+    width:60%;
 
-    margin: 10%;
-    position:absolute;
-    justify-content: left;
-    align-content: center;
-    text-align: left;
-}
-.Projects
-{
-    display:grid;
-
-    overflow-y: hidden;
+   
+    margin: 0%;
     position:absolute;
     justify-content: center;
     align-content: center;
-    width: 80%;
+    text-align: center;
+}
+.Projects
+{
+    width:70%;
 
 }
 .landingContainer
 {
+  
     overflow-y: hidden;
     background-color: black;
 }
@@ -36,27 +31,33 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    
     background-color: rgba(128, 128, 128, 0);
-    width:100%;
-    
 }
+
+.render-blank
+{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    display:flex;
+
+    background: linear-gradient(0.4turn, #0c0c0c, #292929);
+}
+
+
 .RenderProjects
 {
     display: flex;
    
     overflow-y: hidden;
-    position:relative;
+ 
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+   
     background-color: rgba(128, 128, 128, 0);
-    width:100%;
+
     height:300%;
     
-}
-@media screen and (max-width: 960px) 
-{
-
 }

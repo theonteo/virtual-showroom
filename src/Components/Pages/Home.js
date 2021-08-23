@@ -3,12 +3,14 @@ import '../../App.css';
 
 import Footer from '../Footer';
 import Landing from '../Landing';
+import LoadingManager from "../../Render/LoadingManager";
 function Home()
 {
     return (
         <>
-          <Landing/>
-          <Footer/>
+            <LoadingManager/>
+            <Landing/>
+            <Footer/>
         </>
     );
 }

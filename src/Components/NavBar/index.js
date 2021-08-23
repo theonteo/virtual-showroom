@@ -1,13 +1,15 @@
 import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './NavBar.css'
-import {Button} from './Button'
+import logo from '../../images/logo.png'
+
+
+
 
 function NavBar() {
 
     const [click,setClick] = useState(false);
     const [button,setButton] = useState(true);
-
     const handleClick = () =>setClick(!click);
     const closeMobileMenu = ()=> setClick(false);
 
@@ -23,7 +25,7 @@ function NavBar() {
 
     useEffect(() => {
     showButton();
-    }, []);
+    }, [button]);
 
     window.addEventListener('resize',showButton);
 
@@ -32,8 +34,7 @@ function NavBar() {
         <nav className = "navbar">
             <div className = "navbar-container">
                 <Link to="/" className="navbar-logo" onClick ={ closeMobileMenu}>
-                    THE BIRCH
-                <i className ='fab fa-typo3'></i>                    
+                <img src = {logo} className = "logo" alt=""></img>        
                 </Link>
 
                 <div className ='menu-icon' 
@@ -45,18 +46,19 @@ function NavBar() {
                 <ul className = {click?'nav-menu active':'nav-menu'}>
                     <li className = 'nav-item'>
                         <Link to='/' className = 'nav-links' onClick = {closeMobileMenu}>
-                            Home
+                            1. Home.
                         </Link>
                     </li>
 
                     <li className = 'nav-item'>
                         <Link to='/services' className = 'nav-links' onClick = {closeMobileMenu}>
-                            Projects
+                            2. Resume.
                         </Link>
                     </li>
+                   
 
                 </ul>
-                {button && <Button buttonStyle='btn--outline'> Contact</Button> }
+               
 
             </div>
         </nav>

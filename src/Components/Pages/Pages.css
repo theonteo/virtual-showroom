@@ -1,0 +1,38 @@
+
+.page-background
+{
+  display: flex;
+  text-align: left;
+  font-size: 3rem;
+
+  font-family: 'PT Sans', sans-serif;
+  background-color: grey;
+
+  background: linear-gradient(0.4turn, #0c0c0c, #292929);
+}
+.page-container
+{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20%;
+}
+.page-label
+{
+  padding-bottom: 50px;
+  color: #64ffda;
+  font-family: monospace;
+}
+.page-text
+{
+  line-height: 30px;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.page-title
+{
+  font-weight: bold;
+  font-size: 5rem;
+  margin: 10px 0 10px;
+  color: rgb(255, 255, 255);
+}
