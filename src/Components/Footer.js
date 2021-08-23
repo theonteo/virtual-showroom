@@ -40,11 +40,11 @@ function Footer()
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              THEON
+              TEST
               <i class='fab fa-typo3' />
             </Link>
           </div>
-          <small class='website-rights'>Theon © 2021</small>
+          <small class='website-rights'> © 2021</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'

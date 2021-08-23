@@ -8,14 +8,14 @@ function LandingTitle()
         
         <div className = 'Title-group'>
             <div className = 'Title-heading'>
-                ../TheonTeo/
+               
             </div>
             <div className = 'Title-colored'>
                
-                 Software Engineer
+                
             </div>
           
-            <Button buttonStyle='btn--outline'> Contact</Button>
+            <Button buttonStyle='btn--outline'> Know More...</Button>
         </div>
         
     )
