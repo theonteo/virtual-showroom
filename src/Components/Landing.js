@@ -1,5 +1,4 @@
 import React from 'react'
-import LandingTitle from './LandingTitle'
 import Scene1 from './Scenes/Scene1'
 import {Button} from '../Components/NavBar/Button'
 import './Landing.css'
