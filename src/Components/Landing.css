@@ -1,15 +1,16 @@
 .SideBar
 {
+ 
     position:absolute;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
 }
 
 .landingContainer
 {
-    display: flex;
-    position:relative;
+  
+    display:-webkit-flex;
+   
     justify-content: center;
     align-items: center;
 }
