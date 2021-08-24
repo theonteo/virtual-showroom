@@ -1,32 +1,22 @@
 .SideBar
 {
+    width: 100vw;
     display: flex;
-    overflow-y: hidden;
-    width:60%;
-
-   
-    margin: 0%;
     position:absolute;
     justify-content: center;
     align-content: center;
     text-align: center;
 }
-.Projects
-{
-    width:70%;
 
-}
 .landingContainer
 {
-    overflow-x: hidden;
-    overflow-y: hidden;
+
     background-color: black;
 }
 .RenderWindow
 {
     display: flex;
-   
-    overflow-y: hidden;
+
     position:relative;
     justify-content: center;
     align-items: center;
