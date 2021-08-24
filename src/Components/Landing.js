@@ -6,12 +6,14 @@ import './Landing.css'
 function Landing()
  {
     return (
+        <>
         <div className = 'landingContainer'>
                 <div className = "SideBar">
                     <Button buttonStyle='btn--outline'> Know More...</Button>
                 </div>
             <Scene1/>
         </div>
+        </>
     )
 }
 
