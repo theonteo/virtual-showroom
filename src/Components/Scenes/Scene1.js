@@ -92,7 +92,7 @@ loadListener()
     //modify camera position
     this.newCamera.threeCamera.getWorldDirection( this.camDirection);
     this.camSide.crossVectors( this.camDirection,  this.newCamera.threeCamera.up);
-    this.camPos.set(6.0, -9.0 + this.pageLerp * 1.5,-9.0);
+    this.camPos.set(0.0, -13.0 + this.pageLerp * 1.5,12.0);
 
     this.camDirection.multiplyScalar( -this.lerpedMouse.y * 7.5);
     this.camSide.multiplyScalar( this.lerpedMouse.x * 5);
@@ -109,7 +109,7 @@ loadListener()
 
     const rotAmount = 0.25;
     //default rotation value
-    this.camRot.set(0.3,2.7- this.lerpedMouse.x*rotAmount,-0.2);
+    this.camRot.set(0.0,0.0+ this.lerpedMouse.x*rotAmount,-0.0);
   
 
 
