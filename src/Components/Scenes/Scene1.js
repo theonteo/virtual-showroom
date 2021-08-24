@@ -92,7 +92,7 @@ loadListener()
     //modify camera position
     this.newCamera.threeCamera.getWorldDirection( this.camDirection);
     this.camSide.crossVectors( this.camDirection,  this.newCamera.threeCamera.up);
-    this.camPos.set(0.0, -13.0 + this.pageLerp * 1.5,10.0);
+    this.camPos.set(0.0, -14.5 + this.pageLerp * 1.5,10.0);
 
     this.camDirection.multiplyScalar( -this.lerpedMouse.y * 3.5);
     this.camSide.multiplyScalar( this.lerpedMouse.x * 2.5);

@@ -65,14 +65,19 @@ class Scene extends Component
     this.renderer.setClearColor("#ffffff");
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
-
+    this.addListener();
     //add Camera
     this.setCamera( width,height);
     //add lighting here
     const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
     this.scene.add(ambient);
   }
-
+  addListener()
+  {
+    window.addEventListener('resize', () => {
+      this.renderer.setSize(window.innerWidth,window.innerHeight);
+      });
+  }
 
 /******************************************************************************/
 /*!

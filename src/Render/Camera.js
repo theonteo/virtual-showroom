@@ -36,6 +36,9 @@ export default class Camera
       (35,this.width/this.height, 0.1, 1000);
       this.setPosition(this.position);
       this.setRotation(this.rotation);
+
+      this.addListener();
+     
     }
     setScreenResolution(width,height)
     {
@@ -43,6 +46,13 @@ export default class Camera
       new THREE.PerspectiveCamera
       (35,width/height, 0.1, 1000);
     }
+    addListener()
+    {
+      window.addEventListener('resize', () => {
+        this.setScreenResolution(window.innerWidth,window.innerHeight);
+        });
+    }
+   
     setPosition(vec)
     {
       this.position = vec;
