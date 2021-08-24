@@ -1,23 +1,21 @@
 .SideBar
 {
     position:absolute;
+    justify-content: center;
+    align-items: center;
     z-index: 10000;
 }
 
 .landingContainer
 {
-    overflow-y: hidden;
-    background-color: black;
-}
-.RenderWindow
-{
     display: flex;
-
     position:relative;
     justify-content: center;
     align-items: center;
-   
-    
+}
+.RenderWindow
+{
+
     background-color: rgba(128, 128, 128, 1);
 
     

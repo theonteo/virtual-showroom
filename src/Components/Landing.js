@@ -7,13 +7,9 @@ function Landing()
  {
     return (
         <div className = 'landingContainer'>
-            <div className = "RenderWindow">
-                
-                </div>
                 <div className = "SideBar">
                     <Button buttonStyle='btn--outline'> Know More...</Button>
-                
-            </div>
+                </div>
             <Scene1/>
         </div>
     )
