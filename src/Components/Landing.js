@@ -1,7 +1,7 @@
 import React from 'react'
 import LandingTitle from './LandingTitle'
 import Scene1 from './Scenes/Scene1'
-
+import {Button} from '../Components/NavBar/Button'
 import './Landing.css'
 
 function Landing()
@@ -11,7 +11,7 @@ function Landing()
             <div className = "RenderWindow">
                 <Scene1/>
                 <div className = "SideBar">
-                    <LandingTitle/>
+                    <Button buttonStyle='btn--outline'> Know More...</Button>
                 </div>
             </div>
         </div>
