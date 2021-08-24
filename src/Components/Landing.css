@@ -1,21 +1,11 @@
 .SideBar
 {
-    display: flex;
-    overflow-y: hidden;
-    width:80%;
 
-   
-    margin: 0%;
     position:absolute;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
+
 }
 .Projects
 {
-    display:grid;
-    
-    overflow-y: hidden;
     position:absolute;
     justify-content: center;
     align-content: center;
@@ -35,7 +25,7 @@
     position:relative;
     justify-content: center;
     align-items: center;
-    text-align: center;
+   
     
     background-color: rgba(128, 128, 128, 0);
 
