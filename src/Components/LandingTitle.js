@@ -1,7 +1,7 @@
 import { React } from 'react'
 import './LandingTitle.css'
 import './font.css'
-import { Button } from '../Components/NavBar/Button'
+//import { Button } from '../Components/NavBar/Button'
 function LandingTitle()
 {
     return (
