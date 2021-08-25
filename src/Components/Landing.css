@@ -26,8 +26,7 @@
 
 @media screen and (max-width: 960px) {
     .SideBar {
-        width: 100%;
-        position: absolute;
+        z-index: 99999;
         display: flex;
         align-content: center;
         justify-content: center;
