@@ -1,26 +1,25 @@
 .SideBar {
-    width: 100%;
-    position: absolute;
+  
+    z-index: 99999;
     display: flex;
     align-content: center;
     justify-content: center;
-    bottom: 40vh;
 }
 
-.SideBarAbout {
-    margin-left: 10%;
-    top: 10%;
-    position: absolute;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
+.landingContainer {
+    
+    display: flex;
 }
-
-.landingContainer {}
+.landingGroup {
+   
+    display: flex;
+}
 
 .RenderWindow {
-    position: relative;
-    height: auto;
+    
+    width: 100%;
+   
+    position:fixed;
     text-align: center;
     background-color: rgba(128, 128, 128, 0);
 }
@@ -32,15 +31,6 @@
         display: flex;
         align-content: center;
         justify-content: center;
-        bottom: 40vh;
-    }
-    .SideBarAbout {
-        margin-left: 0%;
-        width: 100%;
-        display: flex;
-        overflow-y: hidden;
-        padding-left: 10%;
-        padding-right: 10%;
-        top: 10%;
+      
     }
 }

@@ -7,12 +7,16 @@ function Landing()
 {
     return (
         <div className='landingContainer'>
+             <div className="landingGroup">
             <div className="RenderWindow">
                 <Scene1 />
+            </div>
+          
                 <div className="SideBar">
                     <LandingTitle />
                 </div>
-            </div>
+                </div>
+           
         </div>
     )
 }
