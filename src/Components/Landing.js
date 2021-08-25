@@ -1,19 +1,19 @@
 import React from 'react'
 import Scene1 from './Scenes/Scene1'
-import {Button} from '../Components/NavBar/Button'
+import LandingTitle from './LandingTitle'
 import './Landing.css'
 
 function Landing()
  {
     return (
-        <>
         <div className = 'landingContainer'>
-                <div className = "SideBar">
-                    <Button buttonStyle='btn--outline'> Know More...</Button>
-                </div>
+        <div className = "RenderWindow">
             <Scene1/>
+            <div className = "SideBar">
+                <LandingTitle/>
+            </div>
         </div>
-        </>
+        </div>
     )
 }
 

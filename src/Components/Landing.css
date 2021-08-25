@@ -1,18 +1,57 @@
 .SideBar
 {
-    width:fit-content;
-    height:fit-content;
+    width: 100%;
 
-    flex-wrap: wrap;
+        position:absolute;
+     
+        display:flex;
+        align-content: center;
+        justify-content: center;
+        bottom: 40vh;
+}
+.SideBarAbout
+{  
+    margin-left: 10%;
+    top: 10%;
     position:absolute;
     justify-content: center;
-    align-items: center;
-}
-
+    align-content: center;
+    text-align: center;
+} 
 .landingContainer
 {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+}
+.RenderWindow
+{
+    position:relative;
+    height:auto;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0);
 }
 
+@media screen and (max-width: 960px) 
+{
+    .SideBar
+    {
+        width: 100%;
+
+        position:absolute;
+     
+        display:flex;
+        align-content: center;
+        justify-content: center;
+        bottom: 40vh; 
+    } 
+    .SideBarAbout
+    {
+        margin-left: 0%;
+        width: 100%;
+        display: flex;
+        overflow-y: hidden;
+
+        padding-left: 10%;
+        padding-right: 10%;
+        top: 10%;
+    }
+
+}

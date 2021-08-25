@@ -1,63 +1,21 @@
 
-.Title-group
-{
-    width: 70%;
-}
-.Title-colored
-{
-    color:  #64ffda;
-    font-size:16px;
-    font-weight: 500;
-    padding-bottom: 25px;
-    font-family: monospace;
-    text-align: center;
-
-}
 .Title-heading
 {
-    overflow-y: hidden;
-    font-size:75px;
-    font-weight: 550;
-    color:rgba(255, 255, 255, 0.8);
-    letter-spacing: 0px;
-    line-height: 0.9em;
-    font-family: monospace;
-}
-.Title-heading2
-{
-    overflow-y: hidden;
-    font-size:75px;
-   
-    font-weight: 550;
-    color:rgba(255, 255, 255, 0.3);
-    letter-spacing: 0px;
-    line-height: 0.9em;
-}
-.Title-SubHeading
-{
-    overflow-y: hidden;
-    font-size:14px;
+    font-size:60px;
 
-   
-    color:rgba(255, 255, 255, 0.644);
-    margin-top: 10px;
-    letter-spacing: 1px;
+    font-weight: bold;
+    color:rgba(255, 255, 255, 0.876);
+    letter-spacing: 20px;
     line-height: 0.9em;
 }
 .Title-subtext
 {
-    
-    overflow-y: hidden;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 30px;
-    font-size: 15px;
-    line-height: 1.5;
-    color: rgba(170, 170, 170, 0.726);
-   
+    align-self: center;
+    margin-top: 10px;
+    font-size: 12px;
 
-    line-height: 1.5em;
+    color:white;
+    width: 100%;
 }
 
 @media screen and (max-width: 960px) 
