@@ -24,7 +24,7 @@ import Camera from "./Camera";
 class Scene extends Component
 {
   constructor(_options)
-   {
+  {
     super(_options);
 
     //init variables
@@ -33,28 +33,29 @@ class Scene extends Component
     this.scene = new THREE.Scene();
 
     //add Camera
-     this.setCamera(1200,768);
+    this.setCamera(1200, 768);
   }
-/******************************************************************************/
-/*!
-\brief  create new camera
-*/
-/******************************************************************************/
-  setCamera(width,height)
+  /******************************************************************************/
+  /*!
+  \brief  create new camera
+  */
+  /******************************************************************************/
+  setCamera(width, height)
   {
     //add Camera
-    this.newCamera = 
-    new Camera({
-      position: new THREE.Vector3(6,9,-9),
-      rotation: new THREE.Vector3(0.3,2.7,-0.2),
-      width : width, 
-      height : height});
+    this.newCamera =
+      new Camera({
+        position: new THREE.Vector3(6, 9, -9),
+        rotation: new THREE.Vector3(0.3, 2.7, -0.2),
+        width: width,
+        height: height
+      });
   }
-/******************************************************************************/
-/*!
-\brief  component mounted - three.js
-*/
-/******************************************************************************/
+  /******************************************************************************/
+  /*!
+  \brief  component mounted - three.js
+  */
+  /******************************************************************************/
   componentDidMount()
   {
     const width = this.mount.clientWidth;
@@ -67,92 +68,97 @@ class Scene extends Component
     this.mount.appendChild(this.renderer.domElement);
     this.addListener();
     //add Camera
-    this.setCamera( width,height);
+    this.setCamera(width, height);
     //add lighting here
-    const ambient = new THREE.AmbientLight(0xf5e0ff , 1.2  , 0);
+    const ambient = new THREE.AmbientLight(0xf5e0ff, 1.2, 0);
     this.scene.add(ambient);
   }
   addListener()
   {
-    window.addEventListener('resize', () => {
-      this.renderer.setSize(window.innerWidth,window.innerHeight);
-      });
+    window.addEventListener('resize', () =>
+    {
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+    });
   }
 
-/******************************************************************************/
-/*!
-\brief  start main render - derived class should start
-*/
-/******************************************************************************/
-startRender()
-{
-  //loop through all models and add to scene container
-
-  this.container.forEach(function(item,index)
+  /******************************************************************************/
+  /*!
+  \brief  start main render - derived class should start
+  */
+  /******************************************************************************/
+  startRender()
   {
-    console.log("added");
-    this.scene.add(item);
-  });
+    //loop through all models and add to scene container
 
-  //render scene
-  this.renderScene();
+    this.container.forEach(function (item, index)
+    {
+      console.log("added");
+      this.scene.add(item);
+    });
 
-  //start animation
-  this.start();
-}
+    //render scene
+    this.renderScene();
 
-/******************************************************************************/
-/*!
-\brief  component unmounted - three.js
-*/
-/******************************************************************************/
+    //start animation
+    this.start();
+  }
+
+  /******************************************************************************/
+  /*!
+  \brief  component unmounted - three.js
+  */
+  /******************************************************************************/
   componentWillUnmount()
   {
     this.stop();
     this.mount.removeChild(this.renderer.domElement);
   }
   start = () =>
-   {
-     
-    if (!this.frameId) 
+  {
+
+    if (!this.frameId)
       this.frameId = requestAnimationFrame(this.animate);
-    
+
   };
   stop = () => 
   {
     cancelAnimationFrame(this.frameId);
   };
 
-  animate = () => {
+  animate = () =>
+  {
     //main scene update function
     this.Update();
     this.renderScene();
-   
-    this.frameId = 
-    window.requestAnimationFrame(this.animate);
-  };
-/******************************************************************************/
-/*!
-\brief render final scene
-*/
-/******************************************************************************/
-  renderScene = () => {
 
-    if (this.renderer) 
+    this.frameId =
+      window.requestAnimationFrame(this.animate);
+  };
+  /******************************************************************************/
+  /*!
+  \brief render final scene
+  */
+  /******************************************************************************/
+  renderScene = () =>
+  {
+
+    if (this.renderer)
       this.renderer.render
-      (this.scene, this.newCamera.threeCamera);
+        (this.scene, this.newCamera.threeCamera);
   };
 
 
-/******************************************************************************/
-/*!
-\brief  return - composite html
-*/
-/******************************************************************************/
-  render() {
+  /******************************************************************************/
+  /*!
+  \brief  return - composite html
+  */
+  /******************************************************************************/
+  render()
+  {
     return (
-      <div className = 'render-window'
-        ref={mount => {
+      <div className='render-window'
+        ref={mount =>
+        {
           this.mount = mount;
         }}
       />

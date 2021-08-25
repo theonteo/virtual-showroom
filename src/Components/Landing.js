@@ -4,15 +4,15 @@ import LandingTitle from './LandingTitle'
 import './Landing.css'
 
 function Landing()
- {
+{
     return (
-        <div className = 'landingContainer'>
-        <div className = "RenderWindow">
-            <Scene1/>
-            <div className = "SideBar">
-                <LandingTitle/>
+        <div className='landingContainer'>
+            <div className="RenderWindow">
+                <Scene1 />
+                <div className="SideBar">
+                    <LandingTitle />
+                </div>
             </div>
-        </div>
         </div>
     )
 }

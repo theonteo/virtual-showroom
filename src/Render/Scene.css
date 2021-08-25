@@ -1,24 +1,21 @@
-html, body 
-{
+html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
-.render-window
-{
+
+.render-window {
     width: 100%;
     height: 100vh;
 }
-.render-window-project
-{
+
+.render-window-project {
     width: 100%;
-    display:flex;
+    display: flex;
     height: 200vh;
 }
-@media screen and (min-width: 960px) 
-{
-    .render-window-project
-    {
+
+@media screen and (min-width: 960px) {
+    .render-window-project {
         height: 100vh;
     }
 }
-

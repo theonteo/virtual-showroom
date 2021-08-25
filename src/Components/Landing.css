@@ -1,57 +1,46 @@
-.SideBar
-{
+.SideBar {
     width: 100%;
-
-        position:absolute;
-     
-        display:flex;
-        align-content: center;
-        justify-content: center;
-        bottom: 40vh;
+    position: absolute;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    bottom: 40vh;
 }
-.SideBarAbout
-{  
+
+.SideBarAbout {
     margin-left: 10%;
     top: 10%;
-    position:absolute;
+    position: absolute;
     justify-content: center;
     align-content: center;
     text-align: center;
-} 
-.landingContainer
-{
 }
-.RenderWindow
-{
-    position:relative;
-    height:auto;
+
+.landingContainer {}
+
+.RenderWindow {
+    position: relative;
+    height: auto;
     text-align: center;
     background-color: rgba(128, 128, 128, 0);
 }
 
-@media screen and (max-width: 960px) 
-{
-    .SideBar
-    {
+@media screen and (max-width: 960px) {
+    .SideBar {
         width: 100%;
-
-        position:absolute;
-     
-        display:flex;
+        position: absolute;
+        display: flex;
         align-content: center;
         justify-content: center;
-        bottom: 40vh; 
-    } 
-    .SideBarAbout
-    {
+        bottom: 40vh;
+    }
+    .SideBarAbout {
         margin-left: 0%;
         width: 100%;
         display: flex;
         overflow-y: hidden;
-
         padding-left: 10%;
         padding-right: 10%;
         top: 10%;
     }
-
 }

@@ -1,23 +1,23 @@
-import {React} from 'react'
+import { React } from 'react'
 import './LandingTitle.css'
 import './font.css'
-import {Button} from '../Components/NavBar/Button'
+import { Button } from '../Components/NavBar/Button'
 function LandingTitle()
- {
+{
     return (
         <div>
-        <div className = 'Title-heading'>
-        Theon
+            <div className='Title-heading'>
+                Theon
+            </div>
+
+            <div className='Title-subtext'>
+                Lorem Ipsum
+            </div>
+            <div className='Title-subtext'>
+                <Button buttonStyle='btn--outline'> Contact</Button>
+            </div>
         </div>
-       
-        <div className = 'Title-subtext'>
-        Lorem Ipsum 
-        </div>
-        <div className = 'Title-subtext'>
-        <Button buttonStyle='btn--outline'> Contact</Button>
-        </div>
-    </div>
-    
+
         /*
         <div className = 'Title-group'>
             <div className = 'Title-heading'>

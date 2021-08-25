@@ -23,53 +23,56 @@ import Scene from "../../Render/Scene";
 /******************************************************************************/
 class Scene3 extends Scene
 {
-    //constructor
-    constructor(_options)
-    {
-        super(_options);
-  
-        //add main room model
-        new Model({
-            modelLink:'/room.obj',
-            matLink:'/room.mtl',
-            position: new THREE.Vector3(0,3,0),
-            scale: new THREE.Vector3(2,2,2),
-            scene : this.scene});
-        
-        this.startRender();
-    }
-/******************************************************************************/
-/*!
-\brief  update per frame
-*/
-/******************************************************************************/
-Update()
-{
-  //get page position and lerp camera 
-  const t = document.body.getBoundingClientRect().top;
-  
-  this.pageLerp = t * 0.0045;
+  //constructor
+  constructor(_options)
+  {
+    super(_options);
 
-  //modify camera position
-  let disty = -9.0 + this.pageLerp * 0.5;
-  let distx = 6.0 - this.pageLerp * 0.2;
-  let distz = -9.0 + this.pageLerp * 0.2;
-  this.newCamera.position.y+=1;
+    //add main room model
+    new Model({
+      modelLink: '/room.obj',
+      matLink: '/room.mtl',
+      position: new THREE.Vector3(0, 3, 0),
+      scale: new THREE.Vector3(2, 2, 2),
+      scene: this.scene
+    });
 
-  //position animation
-  this.newCamera.setPosition
-  (this.newCamera.position.lerp(
-    new THREE.Vector3(distx,disty,distz),0.05));
-
-  //rotation animation
-  this.newCamera.setRotation(
-    this.newCamera.rotation.lerp(
-      new THREE.Vector3(0.3,2.7+ this.pageLerp * 0.02,-0.2),0.05));
+    this.startRender();
   }
-  render() {
+  /******************************************************************************/
+  /*!
+  \brief  update per frame
+  */
+  /******************************************************************************/
+  Update()
+  {
+    //get page position and lerp camera 
+    const t = document.body.getBoundingClientRect().top;
+
+    this.pageLerp = t * 0.0045;
+
+    //modify camera position
+    let disty = -9.0 + this.pageLerp * 0.5;
+    let distx = 6.0 - this.pageLerp * 0.2;
+    let distz = -9.0 + this.pageLerp * 0.2;
+    this.newCamera.position.y += 1;
+
+    //position animation
+    this.newCamera.setPosition
+      (this.newCamera.position.lerp(
+        new THREE.Vector3(distx, disty, distz), 0.05));
+
+    //rotation animation
+    this.newCamera.setRotation(
+      this.newCamera.rotation.lerp(
+        new THREE.Vector3(0.3, 2.7 + this.pageLerp * 0.02, -0.2), 0.05));
+  }
+  render()
+  {
     return (
-      <div className = 'render-window-project'
-        ref={mount => {
+      <div className='render-window-project'
+        ref={mount =>
+        {
           this.mount = mount;
         }}
       />

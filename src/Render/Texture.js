@@ -19,44 +19,47 @@ import * as THREE from "three";
 /******************************************************************************/
 export default class Texture
 {
-/******************************************************************************/
-/*!
-\brief 
-*/
-/******************************************************************************/
-    constructor(_options)
-    {
-        this.loaded = false;
-        //init variables
-        this.link = _options.link;
-        this.mesh = _options.mesh;
-       
-        //start loader
-        this.loadTexture();
-    }
-/******************************************************************************/
-/*!
-\brief 
-*/
-/******************************************************************************/
-    loadTexture()
-    {
-        new THREE.TextureLoader().load(
-            this.link,
-            texture => {
-              this.texture = texture;
-              
-              //texture has loaded
-              this.loaded = true;
-            },
-            xhr => {
-              //Download Progress
-              console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-            },
-            error => {
-              //Error CallBack
-              console.log("An error happened" + error);
-            }
-          );
-    }
+  /******************************************************************************/
+  /*!
+  \brief 
+  */
+  /******************************************************************************/
+  constructor(_options)
+  {
+    this.loaded = false;
+    //init variables
+    this.link = _options.link;
+    this.mesh = _options.mesh;
+
+    //start loader
+    this.loadTexture();
+  }
+  /******************************************************************************/
+  /*!
+  \brief 
+  */
+  /******************************************************************************/
+  loadTexture()
+  {
+    new THREE.TextureLoader().load(
+      this.link,
+      texture =>
+      {
+        this.texture = texture;
+
+        //texture has loaded
+        this.loaded = true;
+      },
+      xhr =>
+      {
+        //Download Progress
+        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+      },
+      error =>
+      {
+        //Error CallBack
+        console.log("An error happened" + error);
+      }
+    );
+  }
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 function Footer()
- {
+{
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
@@ -13,12 +13,12 @@ function Footer()
           Wanna get in touch?
         </p>
 
-            <Button buttonStyle='btn--outline'>Contact Me</Button>
-         
+        <Button buttonStyle='btn--outline'>Contact Me</Button>
+
       </section>
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
-         
+
           <div class='footer-link-items'>
             <h2>Contact Me</h2>
             <Link to='/'>LinkedIn</Link>
@@ -33,7 +33,7 @@ function Footer()
             <Link to='/'>Contact</Link>
             <Link to='/'>Resume</Link>
           </div>
-          
+
         </div>
       </div>
       <section class='social-media'>

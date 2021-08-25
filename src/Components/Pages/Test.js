@@ -6,10 +6,10 @@ function Home()
 {
     return (
         <>
-            <h1 className = 'products'>
-            Products
+            <h1 className='products'>
+                Products
             </h1>
-            <Footer/>
+            <Footer />
         </>
     );
 }

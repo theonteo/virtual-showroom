@@ -7,10 +7,7 @@
   font-size: 15px;
 }
 
-.home,
-.services,
-.products,
-.sign-up {
+.home, .services, .products, .sign-up {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -20,7 +17,6 @@
 }
 
 .services {
-  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,7 +25,6 @@
 }
 
 .products {
- 
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -38,7 +33,6 @@
 }
 
 .sign-up {
-
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
