@@ -21,6 +21,21 @@ function LandingTitle()
                             </div >
                         </div>
                     </div>
+                 
+                    <div className='grid-start'>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1-force'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                    </div>
+                    <div className='Title-heading-rotated'>
+                        The Interior.
+                    </div>
                     <div className='grid-start'>
                         <div className='grid-1'>
 
@@ -32,7 +47,27 @@ function LandingTitle()
 
                         </div>
                     </div>
+                    <div className='grid-main'>
+
+                    </div>
                     <div className='grid-start'>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1-boxed'>
+                            <div className='grid-1-text-black'>
+                                The pursuit of effective use of space.
+                            </div>
+                            </div>
+                        <div className='grid-1'>
+
+                        </div>
+                    </div>
+                   
+                    <div className='grid-start'>
+                        <div className='grid-1'>
+
+                        </div>
                         <div className='grid-1'>
 
                         </div>
@@ -41,16 +76,12 @@ function LandingTitle()
                                 The pursuit of effective use of space, user well-being and functional design has contributed to the development of the contemporary interior design profession. The profession of interior design is separate and distinct from the role of interior decorator, a term commonly used in the US; the term is less common in the UK, where the profession of interior design is still unregulated and therefore, strictly speaking, not yet officially a profession.
                             </div>
                         </div>
-                        <div className='grid-1'>
-
-                        </div>
                     </div>
-                </div>
-                <div className='grid-main'>
                     <div className='Title-heading-rotated'>
-                        The Interior.
+                        The Exterior.
                     </div>
                 </div>
+
             </div>
 
 
@@ -65,7 +96,7 @@ function LandingTitle()
                 Some of the experiments include real time rendering of 3d browser backgrounds while making the website responsive for web and mobile.
                 For the assets of the website - arnold renderer is being used for lights mapping the scene with the map being combined into a mesh.
             </div>
-        </div>
+        </div >
 
     )
     /*

@@ -43,6 +43,9 @@ class Scene1 extends Scene
     this.camPos = new Vector3(0, 0, 0);
     this.camRot = new Vector3(0, 0, 0);
 
+    this.sendPoint = new Vector3(0, 0, 0);
+    this.tempPoint = new Vector3(0, 0, 0);
+
     //add main room model
     new Model({
       modelLink: '/room.obj',
@@ -55,6 +58,22 @@ class Scene1 extends Scene
     //add event listeners
     this.loadListener();
     this.startRender();
+    this.generateCamCurve();
+  }
+
+  generateCamCurve()
+  {
+    
+    var randomPoints = [];
+    for (var i = 0; i < 5; i++)
+    {
+      var t =  new THREE.Vector3(Math.random() * 200 - 100, Math.random() * 200 - 100, Math.random() * 200 - 100);
+     t.multiplyScalar(0.05);
+      randomPoints.push(t);
+    }
+    this.spline = new THREE.CatmullRomCurve3(randomPoints);
+    this.points = this.spline.getPoints( 200 );
+
   }
   /******************************************************************************/
   /*!
@@ -89,8 +108,8 @@ class Scene1 extends Scene
     //get page position and lerp camera 
     const t = document.body.getBoundingClientRect().top;
 
-    this.pageLerp = t * 0.0045;
-
+    this.pageLerp = t * 0.00;
+    this.pageLerp2 = t * 0.1;
     //modify camera position
     this.newCamera.threeCamera.getWorldDirection(this.camDirection);
     this.camSide.crossVectors(this.camDirection, this.newCamera.threeCamera.up);
@@ -104,11 +123,26 @@ class Scene1 extends Scene
 
     this.newCamera.position.y += 1;
 
+
+    var index = MathUtils.clamp( -this.pageLerp2,0.0,200.0);
+
+   
+
+    let currPoint = this.points[parseInt(index, 10)];
+  
+    this.tempPoint = currPoint;
+   
+   
+
+    this.sendPoint.copy(this.camPos);
+    this.sendPoint.add(currPoint);
+   
     //position animation
+    //var camPos = spline.getPoint(camPosIndex / 10000);
     this.newCamera.setPosition
       (this.newCamera.position.lerp(
-        this.camPos, 0.05));
-
+        this. sendPoint, 0.05));
+       
     const rotAmount = 0.25;
     //default rotation value
     this.camRot.set(0.0, 0.0 + this.lerpedMouse.x * rotAmount, -0.0);

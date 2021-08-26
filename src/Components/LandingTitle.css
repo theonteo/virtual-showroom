@@ -8,6 +8,8 @@
 
 .Title-heading-rotated {
     position: absolute;
+    width: 200%;
+    padding-right: 1500px;
     padding-top: 100px;
     transform-origin: 0 0;
     transform: rotate(-90deg);
@@ -35,7 +37,9 @@
 .grid-1 {
     height: 30vh;
 }
-
+.grid-1-force {
+    height: 30vh;
+}
 .grid-1-boxed {
     display: flex;
     backdrop-filter: blur(10px);
@@ -48,10 +52,17 @@
 }
 .grid-1-text-white {
     padding:15px;
-    font-size: 20px;
+    font-size: 60px;
     font-weight: 300;
-    line-height: 2rem;
+    line-height: 4rem;
     color: rgb(255, 255, 255);
+}
+.grid-1-text-black {
+    padding:15px;
+    font-size: 60px;
+    font-weight:bold;
+    line-height: 4rem;
+    color: rgba(24, 24, 24, 0.733);
 }
 .grid-1-text {
     padding:15px;
@@ -70,10 +81,13 @@
 }
 
 @media screen and (max-width: 960px) {
+   
     .grid-wrapper {
         padding: 0%;
     }
     .grid-start {
+        padding-left:20px;
+        padding-right:20px;
         display: grid;
         grid-template-columns: none;
         grid-template-row: repeat(3, 1fr);
@@ -83,6 +97,8 @@
         width: 100%;
     }
     .Title-heading-rotated {
+        padding-left:20px;
+        padding-right:20px;
         text-align: left;
         position: relative;
         padding-top: 0px;
