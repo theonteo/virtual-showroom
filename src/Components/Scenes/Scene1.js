@@ -46,10 +46,29 @@ class Scene1 extends Scene
     this.sendPoint = new Vector3(0, 0, 0);
     this.tempPoint = new Vector3(0, 0, 0);
 
+    this.sendPointRot = new Vector3(0, 0, 0);
+    this.tempPointRot = new Vector3(0, 0, 0);
+
     //add main room model
     new Model({
-      modelLink: '/room.obj',
-      matLink: '/room.mtl',
+      modelLink: '/room1.obj',
+      matLink: '/room1.mtl',
+      position: new THREE.Vector3(0, 3, 0),
+      scale: new THREE.Vector3(2, 2, 2),
+      scene: this.scene
+    });
+
+    new Model({
+      modelLink: '/room2.obj',
+      matLink: '/room2.mtl',
+      position: new THREE.Vector3(0, 3, 0),
+      scale: new THREE.Vector3(2, 2, 2),
+      scene: this.scene
+    });
+
+    new Model({
+      modelLink: '/room3.obj',
+      matLink: '/room3.mtl',
       position: new THREE.Vector3(0, 3, 0),
       scale: new THREE.Vector3(2, 2, 2),
       scene: this.scene
@@ -63,16 +82,30 @@ class Scene1 extends Scene
 
   generateCamCurve()
   {
+    //position points
+    var posPoints = [];
+
+    posPoints.push(new THREE.Vector3(-9.417, 17.325, 0.762));
+    posPoints.push(new THREE.Vector3(0.917, 14.359, 9.364));
+    posPoints.push(new THREE.Vector3(8.427, 1.383, 14.626));
+    this.spline = new THREE.CatmullRomCurve3(posPoints);
+    this.points = this.spline.getPoints(200);
+
+    //rotation points
+    var rotPoints = [];
+    //rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(0),THREE.Math.degToRad( 0),THREE.Math.degToRad(0)));
+    //rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(0),THREE.Math.degToRad( 0),THREE.Math.degToRad(0)));
+    rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(-6.597),THREE.Math.degToRad( 18.808),THREE.Math.degToRad(-19.735)));
+   // rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(-27.258),THREE.Math.degToRad( 19.532),THREE.Math.degToRad( -57.020)));
+    //rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(53.360), THREE.Math.degToRad(87.808-90.0),THREE.Math.degToRad( 53.380)));
     
-    var randomPoints = [];
-    for (var i = 0; i < 5; i++)
-    {
-      var t =  new THREE.Vector3(Math.random() * 200 - 100, Math.random() * 200 - 100, Math.random() * 200 - 100);
-     t.multiplyScalar(0.05);
-      randomPoints.push(t);
-    }
-    this.spline = new THREE.CatmullRomCurve3(randomPoints);
-    this.points = this.spline.getPoints( 200 );
+    
+    rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(53-90), THREE.Math.degToRad(87.808-90.0),THREE.Math.degToRad(0)));
+    
+    
+    
+    this.RotSpline = new THREE.CatmullRomCurve3(rotPoints);
+    this.rotPoints = this.RotSpline.getPoints(200);
 
   }
   /******************************************************************************/
@@ -113,44 +146,49 @@ class Scene1 extends Scene
     //modify camera position
     this.newCamera.threeCamera.getWorldDirection(this.camDirection);
     this.camSide.crossVectors(this.camDirection, this.newCamera.threeCamera.up);
-    this.camPos.set(0.0, -14.5 + this.pageLerp * 1.5, 10.0);
-
+    this.camPos.set(0.0,  this.pageLerp * 1.5, 0.0);
+    this.camRot.set(0.0,  0, 0);
     this.camDirection.multiplyScalar(-this.lerpedMouse.y * 3.5);
     this.camSide.multiplyScalar(this.lerpedMouse.x * 2.5);
 
     this.camPos.add(this.camDirection);
     this.camPos.add(this.camSide);
 
-    this.newCamera.position.y += 1;
+    //this.newCamera.position.y += 1;
 
 
-    var index = MathUtils.clamp( -this.pageLerp2,0.0,200.0);
+    var index = MathUtils.clamp(-this.pageLerp2, 0.0, 200.0);
 
-   
+
 
     let currPoint = this.points[parseInt(index, 10)];
-  
+    let currPointRot = this.rotPoints[parseInt(index, 10)];
+
     this.tempPoint = currPoint;
-   
-   
+    this.tempPointRot = currPointRot;
+
 
     this.sendPoint.copy(this.camPos);
     this.sendPoint.add(currPoint);
-   
+
+    this.sendPointRot.copy(this.camRot);
+    this.sendPointRot.add(currPointRot);
+
+
     //position animation
     //var camPos = spline.getPoint(camPosIndex / 10000);
     this.newCamera.setPosition
       (this.newCamera.position.lerp(
-        this. sendPoint, 0.05));
-       
-    const rotAmount = 0.25;
+        this.sendPoint, 0.05));
+
+    //const rotAmount = 0.25;
     //default rotation value
-    this.camRot.set(0.0, 0.0 + this.lerpedMouse.x * rotAmount, -0.0);
+    //this.camRot.set(0.0, 0.0 + this.lerpedMouse.x * rotAmount, -0.0);
 
     //rotation animation
     this.newCamera.setRotation(
       this.newCamera.rotation.lerp(
-        this.camRot, 0.05));
+        this.sendPointRot, 0.05));
   }
 }
 

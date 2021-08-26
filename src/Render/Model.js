@@ -58,8 +58,8 @@ export default class Model
         {
           console.log(" load!");
           this.Mesh = object;
-          this.Mesh.position.setY(3); //or  this
-          this.Mesh.scale.set(2, 2, 2);
+          this.Mesh.position.setY(0); //or  this
+          this.Mesh.scale.set(1, 1, 1);
           this.scene.add(this.Mesh);
         },
         xhr =>

@@ -22,13 +22,13 @@ export default class Camera
   //constructor
   constructor(_options)
   {
+    this.quat = new THREE.Euler(0,0,0);
     this.width = _options.width;
     this.height = _options.height;
 
     //set position
     this.position = _options.position;
     this.rotation = _options.rotation;
-    this.euler = new THREE.Vector3(0, 0, 0);
 
     //new three.js camera
     this.threeCamera =
@@ -64,8 +64,17 @@ export default class Camera
   setRotation(vec)
   {
     this.rotation = vec;
-    this.threeCamera.rotation.x = this.rotation.x;
-    this.threeCamera.rotation.y = this.rotation.y;
-    this.threeCamera.rotation.z = this.rotation.z;
+    //this.threeCamera.setRotationFromQuaternion( = this.rotation.x;
+    //this.threeCamera.rotation.x = this.rotation.x;
+    //this.threeCamera.rotation.y = this.rotation.y;
+  //this.threeCamera.rotation.z = this.rotation.z;
+    this.quat.x = this.rotation.x;
+    this.quat.y = this.rotation.y;
+    this.quat.z = this.rotation.z;
+    this.threeCamera.setRotationFromEuler(this.quat);
+
+  
+
+
   }
 }
