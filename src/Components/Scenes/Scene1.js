@@ -41,13 +41,13 @@ class Scene1 extends Scene
     this.camDirection = new Vector3(0, 0, 0);
     this.camSide = new Vector3(0, 0, 0);
     this.camPos = new Vector3(0, 0, 0);
-    this.camRot = new Vector3(0, 0, 0);
+    this.camLookAt = new Vector3(0, 0, 0);
 
     this.sendPoint = new Vector3(0, 0, 0);
     this.tempPoint = new Vector3(0, 0, 0);
 
-    this.sendPointRot = new Vector3(0, 0, 0);
-    this.tempPointRot = new Vector3(0, 0, 0);
+    this.sendPointLookAt = new Vector3(0, 0, 0);
+    this.tempPointLookAt = new Vector3(0, 0, 0);
 
     //add main room model
     new Model({
@@ -92,20 +92,14 @@ class Scene1 extends Scene
     this.points = this.spline.getPoints(200);
 
     //rotation points
-    var rotPoints = [];
-    //rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(0),THREE.Math.degToRad( 0),THREE.Math.degToRad(0)));
-    //rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(0),THREE.Math.degToRad( 0),THREE.Math.degToRad(0)));
-    rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(-6.597),THREE.Math.degToRad( 18.808),THREE.Math.degToRad(-19.735)));
-   // rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(-27.258),THREE.Math.degToRad( 19.532),THREE.Math.degToRad( -57.020)));
-    //rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(53.360), THREE.Math.degToRad(87.808-90.0),THREE.Math.degToRad( 53.380)));
+    var lookAtPoints = [];
+    lookAtPoints.push(new THREE.Vector3(2.673,13.761,-3.648));
+    lookAtPoints.push(new THREE.Vector3(7.481,6.471,8.451));
+    lookAtPoints.push(new THREE.Vector3(7.481, 0.822,8.451));
     
     
-    rotPoints.push(new THREE.Vector3(THREE.Math.degToRad(53-90), THREE.Math.degToRad(87.808-90.0),THREE.Math.degToRad(0)));
-    
-    
-    
-    this.RotSpline = new THREE.CatmullRomCurve3(rotPoints);
-    this.rotPoints = this.RotSpline.getPoints(200);
+    this.lookAtSpline = new THREE.CatmullRomCurve3(lookAtPoints);
+    this.lookAtPoints = this.lookAtSpline.getPoints(200);
 
   }
   /******************************************************************************/
@@ -147,12 +141,12 @@ class Scene1 extends Scene
     this.newCamera.threeCamera.getWorldDirection(this.camDirection);
     this.camSide.crossVectors(this.camDirection, this.newCamera.threeCamera.up);
     this.camPos.set(0.0,  this.pageLerp * 1.5, 0.0);
-    this.camRot.set(0.0,  0, 0);
+    this.camLookAt.set(0.0,  0, 0);
     this.camDirection.multiplyScalar(-this.lerpedMouse.y * 3.5);
     this.camSide.multiplyScalar(this.lerpedMouse.x * 2.5);
 
-    this.camPos.add(this.camDirection);
-    this.camPos.add(this.camSide);
+   // this.camPos.add(this.camDirection);
+    //this.camPos.add(this.camSide);
 
     //this.newCamera.position.y += 1;
 
@@ -162,33 +156,36 @@ class Scene1 extends Scene
 
 
     let currPoint = this.points[parseInt(index, 10)];
-    let currPointRot = this.rotPoints[parseInt(index, 10)];
+    let currPointLookAt = this.lookAtPoints[parseInt(index, 10)];
 
     this.tempPoint = currPoint;
-    this.tempPointRot = currPointRot;
+    this.tempPointLookAt = currPointLookAt;
 
 
     this.sendPoint.copy(this.camPos);
     this.sendPoint.add(currPoint);
 
-    this.sendPointRot.copy(this.camRot);
-    this.sendPointRot.add(currPointRot);
+    this.sendPointLookAt.copy(this.camLookAt);
+    this.sendPointLookAt.add(currPointLookAt);
 
 
     //position animation
     //var camPos = spline.getPoint(camPosIndex / 10000);
+   // this.newCamera.setPosition
+    //  (this.newCamera.position.lerp(
+    //    this.sendPoint, 0.05));
     this.newCamera.setPosition
-      (this.newCamera.position.lerp(
-        this.sendPoint, 0.05));
-
+    (this.sendPoint);
     //const rotAmount = 0.25;
     //default rotation value
     //this.camRot.set(0.0, 0.0 + this.lerpedMouse.x * rotAmount, -0.0);
 
+
+    this.newCamera.threeCamera.lookAt(this.sendPointLookAt);
     //rotation animation
-    this.newCamera.setRotation(
-      this.newCamera.rotation.lerp(
-        this.sendPointRot, 0.05));
+    //his.newCamera.setRotation(
+     // this.newCamera.rotation.lerp(
+     //   this.sendPointRot, 0.05));
   }
 }
 
