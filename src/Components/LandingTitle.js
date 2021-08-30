@@ -92,9 +92,7 @@ function LandingTitle()
             </div>
 
             <div className='Title-subtext'>
-                This is the first website I have built from scratch and it is designed to expand my knowledge on frontend development.
-                Some of the experiments include real time rendering of 3d browser backgrounds while making the website responsive for web and mobile.
-                For the assets of the website - arnold renderer is being used for lights mapping the scene with the map being combined into a mesh.
+            Lorem Ipsum
             </div>
         </div >
 

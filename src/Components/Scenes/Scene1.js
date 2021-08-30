@@ -39,6 +39,7 @@ class Scene1 extends Scene
 
     //camera vectors
     this.camDirection = new Vector3(0, 0, 0);
+    this.camUp = new Vector3(0, 0, 0);
     this.camSide = new Vector3(0, 0, 0);
     this.camPos = new Vector3(0, 0, 0);
     this.camLookAt = new Vector3(0, 0, 0);
@@ -97,10 +98,8 @@ class Scene1 extends Scene
     lookAtPoints.push(new THREE.Vector3(7.481,6.471,8.451));
     lookAtPoints.push(new THREE.Vector3(7.481, 0.822,8.451));
     
-    
     this.lookAtSpline = new THREE.CatmullRomCurve3(lookAtPoints);
     this.lookAtPoints = this.lookAtSpline.getPoints(200);
-
   }
   /******************************************************************************/
   /*!
@@ -112,10 +111,8 @@ class Scene1 extends Scene
     window.addEventListener("mousemove",
       (e) =>
       {
-
         this.mouse.x = e.clientX;
         this.mouse.y = e.clientY;
-
       });
   }
 
@@ -129,8 +126,8 @@ class Scene1 extends Scene
     this.mouseNormalized.x = this.mouse.x / window.innerWidth;
     this.mouseNormalized.y = this.mouse.y / window.innerHeight;
 
-    this.lerpedMouse.x = MathUtils.lerp(this.lerpedMouse.x, this.mouseNormalized.x, 1 / this.dt);
-    this.lerpedMouse.y = MathUtils.lerp(this.lerpedMouse.y, this.mouseNormalized.y, 1 / this.dt);
+    this.lerpedMouse.x = MathUtils.lerp(this.lerpedMouse.x, this.mouseNormalized.x,0.1* 1 / this.dt);
+    this.lerpedMouse.y = MathUtils.lerp(this.lerpedMouse.y, this.mouseNormalized.y,0.1* 1 / this.dt);
 
     //get page position and lerp camera 
     const t = document.body.getBoundingClientRect().top;
@@ -139,12 +136,14 @@ class Scene1 extends Scene
     this.pageLerp2 = t * 0.1;
     //modify camera position
     this.newCamera.threeCamera.getWorldDirection(this.camDirection);
+   
     this.camSide.crossVectors(this.camDirection, this.newCamera.threeCamera.up);
+    this.camUp.crossVectors(this.camSide, this.newCamera.threeCamera.up);
     this.camPos.set(0.0,  this.pageLerp * 1.5, 0.0);
     this.camLookAt.set(0.0,  0, 0);
     this.camDirection.multiplyScalar(-this.lerpedMouse.y * 3.5);
     this.camSide.multiplyScalar(this.lerpedMouse.x * 2.5);
-
+    this.camUp.multiplyScalar(-this.lerpedMouse.y * 3.5);
    // this.camPos.add(this.camDirection);
     //this.camPos.add(this.camSide);
 
@@ -164,9 +163,13 @@ class Scene1 extends Scene
 
     this.sendPoint.copy(this.camPos);
     this.sendPoint.add(currPoint);
-
+    this.sendPoint.add(this.camDirection);
+    this.sendPoint.add(this.camSide);
+    this.sendPoint.add(this.camUp);
     this.sendPointLookAt.copy(this.camLookAt);
     this.sendPointLookAt.add(currPointLookAt);
+   // this.sendPointLookAt.add(this.camDirection);
+    //this.sendPointLookAt.add(this.camSide);
 
 
     //position animation
