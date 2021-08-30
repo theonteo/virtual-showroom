@@ -9,7 +9,6 @@ This project contains portfolio / web-mobile responsive application
 \Not for distribution
 */
 /*****************************************************************************/
-import { ThemeProvider } from "@material-ui/styles";
 import * as THREE from "three";
 import { MathUtils, Vector2, Vector3 } from "three";
 
