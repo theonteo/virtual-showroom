@@ -9,6 +9,7 @@ This project contains portfolio / web-mobile responsive application
 \Not for distribution
 */
 /*****************************************************************************/
+import { ThemeProvider } from "@material-ui/styles";
 import * as THREE from "three";
 import { MathUtils, Vector2, Vector3 } from "three";
 
@@ -79,7 +80,15 @@ class Scene1 extends Scene
     this.loadListener();
     this.startRender();
     this.generateCamCurve();
-  }
+
+
+    this.currPointLerped = new Vector3(0, 0, 0);
+    this.currPointLookAtLerped = new Vector3(0, 0, 0);
+    this.currPointLerped.set
+      (this.points[0].x - 10, this.points[0].y - 10, this.points[0].z - 10);
+      this.currPointLookAtLerped.set
+      (this.points[0].x , this.points[0].y, this.points[0].z );
+    }
 
   generateCamCurve()
   {
@@ -88,19 +97,19 @@ class Scene1 extends Scene
 
     posPoints.push(new THREE.Vector3(-9.417, 17.325, 0.762));
     posPoints.push(new THREE.Vector3(0.917, 14.359, 9.364));
-  
+
     posPoints.push(new THREE.Vector3(6.695, 0.949, 11.080));
     this.spline = new THREE.CatmullRomCurve3(posPoints);
     this.points = this.spline.getPoints(200);
 
     //rotation points
     var lookAtPoints = [];
-    lookAtPoints.push(new THREE.Vector3(2.673,13.761,-3.648));
-    lookAtPoints.push(new THREE.Vector3(7.481,6.471,8.451));
-   
-   
-    lookAtPoints.push(new THREE.Vector3(9.020, 0.822,8.451));
-    
+    lookAtPoints.push(new THREE.Vector3(2.673, 13.761, -3.648));
+    lookAtPoints.push(new THREE.Vector3(7.481, 6.471, 8.451));
+
+
+    lookAtPoints.push(new THREE.Vector3(9.020, 0.822, 8.451));
+
     this.lookAtSpline = new THREE.CatmullRomCurve3(lookAtPoints);
     this.lookAtPoints = this.lookAtSpline.getPoints(200);
   }
@@ -129,69 +138,51 @@ class Scene1 extends Scene
     this.mouseNormalized.x = this.mouse.x / window.innerWidth;
     this.mouseNormalized.y = this.mouse.y / window.innerHeight;
 
-    this.lerpedMouse.x = MathUtils.lerp(this.lerpedMouse.x, this.mouseNormalized.x,0.1* 1 / this.dt);
-    this.lerpedMouse.y = MathUtils.lerp(this.lerpedMouse.y, this.mouseNormalized.y,0.1* 1 / this.dt);
+    this.lerpedMouse.x = MathUtils.lerp(this.lerpedMouse.x, this.mouseNormalized.x, 0.1 * 1 / this.dt);
+    this.lerpedMouse.y = MathUtils.lerp(this.lerpedMouse.y, this.mouseNormalized.y, 0.1 * 1 / this.dt);
 
     //get page position and lerp camera 
     const t = document.body.getBoundingClientRect().top;
 
     this.pageLerp = t * 0.00;
     this.pageLerp2 = t * 0.1;
+
     //modify camera position
     this.newCamera.threeCamera.getWorldDirection(this.camDirection);
-   
+
     this.camSide.crossVectors(this.camDirection, this.newCamera.threeCamera.up);
     this.camUp.crossVectors(this.camSide, this.newCamera.threeCamera.up);
-    this.camPos.set(0.0,  this.pageLerp * 1.5, 0.0);
-    this.camLookAt.set(0.0,  0, 0);
+
+    this.camPos.set(0.0, this.pageLerp * 1.5, 0.0);
+    this.camLookAt.set(0.0, 0, 0);
+
     this.camDirection.multiplyScalar(-this.lerpedMouse.y * 3.5);
     this.camSide.multiplyScalar(this.lerpedMouse.x * 2.5);
     this.camUp.multiplyScalar(-this.lerpedMouse.y * 3.5);
-   // this.camPos.add(this.camDirection);
-    //this.camPos.add(this.camSide);
-
-    //this.newCamera.position.y += 1;
-
 
     var index = MathUtils.clamp(-this.pageLerp2, 0.0, 200.0);
-
-
 
     let currPoint = this.points[parseInt(index, 10)];
     let currPointLookAt = this.lookAtPoints[parseInt(index, 10)];
 
     this.tempPoint = currPoint;
     this.tempPointLookAt = currPointLookAt;
-
-
     this.sendPoint.copy(this.camPos);
     this.sendPoint.add(currPoint);
     this.sendPoint.add(this.camDirection);
     this.sendPoint.add(this.camSide);
     this.sendPoint.add(this.camUp);
+
     this.sendPointLookAt.copy(this.camLookAt);
     this.sendPointLookAt.add(currPointLookAt);
-   // this.sendPointLookAt.add(this.camDirection);
-    //this.sendPointLookAt.add(this.camSide);
 
+    this.currPointLerped.lerp(this.sendPoint, 0.05);
+    this.currPointLookAtLerped.lerp(this.sendPointLookAt, 0.05);
 
-    //position animation
-    //var camPos = spline.getPoint(camPosIndex / 10000);
-   // this.newCamera.setPosition
-    //  (this.newCamera.position.lerp(
-    //    this.sendPoint, 0.05));
     this.newCamera.setPosition
-    (this.sendPoint);
-    //const rotAmount = 0.25;
-    //default rotation value
-    //this.camRot.set(0.0, 0.0 + this.lerpedMouse.x * rotAmount, -0.0);
+      (this.currPointLerped);
 
-
-    this.newCamera.threeCamera.lookAt(this.sendPointLookAt);
-    //rotation animation
-    //his.newCamera.setRotation(
-     // this.newCamera.rotation.lerp(
-     //   this.sendPointRot, 0.05));
+    this.newCamera.threeCamera.lookAt(this.currPointLookAtLerped);
   }
 }
 
