@@ -88,7 +88,8 @@ class Scene1 extends Scene
 
     posPoints.push(new THREE.Vector3(-9.417, 17.325, 0.762));
     posPoints.push(new THREE.Vector3(0.917, 14.359, 9.364));
-    posPoints.push(new THREE.Vector3(8.427, 1.383, 14.626));
+  
+    posPoints.push(new THREE.Vector3(6.695, 0.949, 11.080));
     this.spline = new THREE.CatmullRomCurve3(posPoints);
     this.points = this.spline.getPoints(200);
 
@@ -96,7 +97,9 @@ class Scene1 extends Scene
     var lookAtPoints = [];
     lookAtPoints.push(new THREE.Vector3(2.673,13.761,-3.648));
     lookAtPoints.push(new THREE.Vector3(7.481,6.471,8.451));
-    lookAtPoints.push(new THREE.Vector3(7.481, 0.822,8.451));
+   
+   
+    lookAtPoints.push(new THREE.Vector3(9.020, 0.822,8.451));
     
     this.lookAtSpline = new THREE.CatmullRomCurve3(lookAtPoints);
     this.lookAtPoints = this.lookAtSpline.getPoints(200);

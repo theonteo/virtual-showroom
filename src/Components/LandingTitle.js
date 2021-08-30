@@ -21,7 +21,7 @@ function LandingTitle()
                             </div >
                         </div>
                     </div>
-                 
+
                     <div className='grid-start'>
                         <div className='grid-1'>
 
@@ -34,7 +34,7 @@ function LandingTitle()
                         </div>
                     </div>
                     <div className='Title-heading-rotated'>
-                        The Interior.
+                        The Exterior.
                     </div>
                     <div className='grid-start'>
                         <div className='grid-1'>
@@ -58,12 +58,12 @@ function LandingTitle()
                             <div className='grid-1-text-black'>
                                 The pursuit of effective use of space.
                             </div>
-                            </div>
+                        </div>
                         <div className='grid-1'>
 
                         </div>
                     </div>
-                   
+
                     <div className='grid-start'>
                         <div className='grid-1'>
 
@@ -73,16 +73,82 @@ function LandingTitle()
                         </div>
                         <div className='grid-1-boxed-black'>
                             <div className='grid-1-text-white'>
-                                The pursuit of effective use of space, user well-being and functional design has contributed to the development of the contemporary interior design profession. The profession of interior design is separate and distinct from the role of interior decorator, a term commonly used in the US; the term is less common in the UK, where the profession of interior design is still unregulated and therefore, strictly speaking, not yet officially a profession.
+                                The pursuit of effective use of space, user well-being and functional design has contributed to the development of the contemporary interior design profession.
                             </div>
                         </div>
                     </div>
-                    <div className='Title-heading-rotated'>
-                        The Exterior.
+
+                    <div className='grid-start'>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
                     </div>
+                    <div className='grid-start'>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                    </div>
+                    
+                    <div className='grid-start'>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                    </div>
+                    <div className='Title-heading-rotated'>
+                        The Interior.
+                    </div>
+                    <div className='grid-start'>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                    </div>
+                    <div className='grid-start'>
+                    <div className='grid-1-boxed'>
+                            <div className='grid-1-text-black'>
+                                A new space for you.
+                            </div>
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                        <div className='grid-1'>
+
+                        </div>
+                    </div>
+
+                  
                 </div>
 
             </div>
+
+
+
+
+
 
 
 
@@ -92,7 +158,7 @@ function LandingTitle()
             </div>
 
             <div className='Title-subtext'>
-            Lorem Ipsum
+                Lorem Ipsum
             </div>
         </div >
 
