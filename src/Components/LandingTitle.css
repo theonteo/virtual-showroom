@@ -13,7 +13,7 @@
     padding-top: 100px;
     transform-origin: 0 0;
     transform: rotate(-90deg);
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.876);
     letter-spacing: 20px;
@@ -64,6 +64,10 @@
     line-height: 4rem;
     color: rgba(24, 24, 24, 0.733);
 }
+.grid-gap {
+   height:75vh;
+}
+
 .grid-1-text {
     padding:15px;
     font-size: 20px;

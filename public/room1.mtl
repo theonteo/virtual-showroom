@@ -1,21 +1,51 @@
-newmtl a:big_chair_pole_2SG
+newmtl EXPORT_GOOGLE_SAT_WM1SG1
 illum 4
-Kd 1.00 1.00 1.00
+map_Kd room1.jpg
+Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
+Ni 0.00
+newmtl EXPORT_GOOGLE_SAT_WMSG
+illum 4
 map_Kd room1.jpg
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
 Ni 1.00
+Ks 0.20 0.20 0.20
+Ns 23.00
 newmtl big_chair_pole_2SG
 illum 4
-Kd 1.00 1.00 1.00
-Ka 1.00 1.00 1.00
-Tf 1.00 1.00 1.00
 map_Kd room1.jpg
-Ni 1.00
-newmtl initialShadingGroup
-illum 4
-Kd 1.00 1.00 1.00
+Kd 1.0 1.0 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
+Ni 0.00
+newmtl initialShadingGroup
+illum 4
 map_Kd room1.jpg
+Kd 1.0 1.0 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert3SG
+illum 4
+map_Kd room1.jpg
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 0.00
+newmtl lambert6SG
+illum 4
+map_Kd room1.jpg
+Kd 1.0 1.0 1.0
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert7SG
+illum 4
+map_Kd room1.jpg
+Kd 1.00 1.0 1.0
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
 Ni 1.00

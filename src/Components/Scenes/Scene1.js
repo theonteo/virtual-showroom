@@ -59,22 +59,7 @@ class Scene1 extends Scene
       scene: this.scene
     });
 
-    new Model({
-      modelLink: '/room2.obj',
-      matLink: '/room2.mtl',
-      position: new THREE.Vector3(0, 3, 0),
-      scale: new THREE.Vector3(2, 2, 2),
-      scene: this.scene
-    });
-
-    new Model({
-      modelLink: '/room3.obj',
-      matLink: '/room3.mtl',
-      position: new THREE.Vector3(0, 3, 0),
-      scale: new THREE.Vector3(2, 2, 2),
-      scene: this.scene
-    });
-
+  
     //add event listeners
     this.loadListener();
     this.startRender();
@@ -94,20 +79,18 @@ class Scene1 extends Scene
     //position points
     var posPoints = [];
 
-    posPoints.push(new THREE.Vector3(-9.417, 17.325, 0.762));
-    posPoints.push(new THREE.Vector3(0.917, 14.359, 9.364));
-
-    posPoints.push(new THREE.Vector3(6.695, 0.949, 11.080));
+    posPoints.push(new THREE.Vector3(0.159,1.291, 7.824));
+    posPoints.push(new THREE.Vector3(1.531, 2.06, 4.369));
+    posPoints.push(new THREE.Vector3(0.175,2.417, 4.849));
     this.spline = new THREE.CatmullRomCurve3(posPoints);
     this.points = this.spline.getPoints(200);
 
     //rotation points
     var lookAtPoints = [];
-    lookAtPoints.push(new THREE.Vector3(2.673, 13.761, -3.648));
-    lookAtPoints.push(new THREE.Vector3(7.481, 6.471, 8.451));
 
-
-    lookAtPoints.push(new THREE.Vector3(9.020, 0.822, 8.451));
+    lookAtPoints.push(new THREE.Vector3(0, 1.302,3.447));
+    lookAtPoints.push(new THREE.Vector3(2.254, 1.373, 1.899));
+    lookAtPoints.push(new THREE.Vector3(1, 1.373, 3.16));
 
     this.lookAtSpline = new THREE.CatmullRomCurve3(lookAtPoints);
     this.lookAtPoints = this.lookAtSpline.getPoints(200);
