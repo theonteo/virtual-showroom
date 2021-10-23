@@ -5,7 +5,7 @@
 \par email: theonteo96@gmail.com
 \date 2021
 \brief
-This project contains portfolio / web-mobile responsive application
+This project contains model application
 \Not for distribution
 */
 /*****************************************************************************/
@@ -14,7 +14,7 @@ import { MathUtils, Vector2, Vector3 } from "three";
 
 //renderer related
 import Model from "../../Render/Model";
-import Scene from "../../Render/Scene";
+import Scene from "./Scene";
 
 
 /******************************************************************************/
@@ -69,7 +69,7 @@ class Scene1 extends Scene
     this.currPointLerped = new Vector3(0, 0, 0);
     this.currPointLookAtLerped = new Vector3(0, 0, 0);
     this.currPointLerped.set
-      (this.points[0].x - 10, this.points[0].y - 10, this.points[0].z - 10);
+      (this.points[0].x , this.points[0].y + 10, this.points[0].z );
       this.currPointLookAtLerped.set
       (this.points[0].x , this.points[0].y, this.points[0].z );
     }
@@ -79,8 +79,8 @@ class Scene1 extends Scene
     //position points
     var posPoints = [];
 
-    posPoints.push(new THREE.Vector3(0.159,1.291, 7.824));
-    posPoints.push(new THREE.Vector3(1.531, 2.06, 4.369));
+    posPoints.push(new THREE.Vector3(0.159,1.291, 5.824));
+    posPoints.push(new THREE.Vector3(0.931, 2.06, 4.369));
     posPoints.push(new THREE.Vector3(0.175,2.417, 4.849));
     this.spline = new THREE.CatmullRomCurve3(posPoints);
     this.points = this.spline.getPoints(200);
@@ -88,9 +88,9 @@ class Scene1 extends Scene
     //rotation points
     var lookAtPoints = [];
 
-    lookAtPoints.push(new THREE.Vector3(0, 1.302,3.447));
+    lookAtPoints.push(new THREE.Vector3(1.3, 1.302,2.1));
     lookAtPoints.push(new THREE.Vector3(2.254, 1.373, 1.899));
-    lookAtPoints.push(new THREE.Vector3(1, 1.373, 3.16));
+    lookAtPoints.push(new THREE.Vector3(0.3, 1.373, 3.16));
 
     this.lookAtSpline = new THREE.CatmullRomCurve3(lookAtPoints);
     this.lookAtPoints = this.lookAtSpline.getPoints(200);
@@ -120,8 +120,8 @@ class Scene1 extends Scene
     this.mouseNormalized.x = this.mouse.x / window.innerWidth;
     this.mouseNormalized.y = this.mouse.y / window.innerHeight;
 
-    this.lerpedMouse.x = MathUtils.lerp(this.lerpedMouse.x, this.mouseNormalized.x, 0.1 * 1 / this.dt);
-    this.lerpedMouse.y = MathUtils.lerp(this.lerpedMouse.y, this.mouseNormalized.y, 0.1 * 1 / this.dt);
+    this.lerpedMouse.x = MathUtils.lerp(this.lerpedMouse.x, this.mouseNormalized.x, 0.05 * 1 / this.dt);
+    this.lerpedMouse.y = MathUtils.lerp(this.lerpedMouse.y, this.mouseNormalized.y, 0.05 * 1 / this.dt);
 
     //get page position and lerp camera 
     const t = document.body.getBoundingClientRect().top;

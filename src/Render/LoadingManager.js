@@ -21,7 +21,7 @@ class LoadingManager extends Component
 {
 
     state = {
-        progressWidth: "10%",
+        progressWidth: "0%",
         hideScreen: true
     }
     constructor(_options)
@@ -29,9 +29,8 @@ class LoadingManager extends Component
 
         super(_options);
         this.setState({
-            progressWidth: "30%"
+            progressWidth: "0%"
         });
-        //this.progressWidth ="80%";
         this.update();
     }
 
@@ -84,11 +83,11 @@ class LoadingManager extends Component
     {
         return (
             <>
-                <div className='loading-container' style={{ zIndex: this.state.hideScreen ? 999 : -999 }}>
-                    <div className='loading-background'>
-                        <div className='progress'>
+                <div className='loading-container' >
+                    <div className='loading-background' style={{ background: !this.state.hideScreen ? "rgba(21, 21, 21,0)" : "rgb(21, 21, 21) " }}>
+                        <div className='progress' style={{ zIndex: this.state.hideScreen ? 999 : -999, background: !this.state.hideScreen ? "rgba(51, 51, 51,0)" : "rgb(51, 51, 51) " }} >
                             <div className='progress2'
-                                style={{ width: this.state.progressWidth }} >
+                                style={{ zIndex: this.state.hideScreen ? 999 : -999, width: this.state.progressWidth, background: !this.state.hideScreen ? "rgba(202, 196, 255,0) " : "rgb(202, 196, 255) " }} >
                             </div>
                         </div>
                     </div>

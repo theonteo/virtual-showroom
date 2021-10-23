@@ -5,7 +5,7 @@
 \par email: theonteo96@gmail.com
 \date 2021
 \brief
-This project contains portfolio / web-mobile responsive application
+This project contains model application
 \Not for distribution
 */
 /*****************************************************************************/
@@ -64,10 +64,6 @@ export default class Camera
   setRotation(vec)
   {
     this.rotation = vec;
-    //this.threeCamera.setRotationFromQuaternion( = this.rotation.x;
-    //this.threeCamera.rotation.x = this.rotation.x;
-    //this.threeCamera.rotation.y = this.rotation.y;
-  //this.threeCamera.rotation.z = this.rotation.z;
     this.quat.x = this.rotation.x;
     this.quat.y = this.rotation.y;
     this.quat.z = this.rotation.z;

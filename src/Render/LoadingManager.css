@@ -1,30 +1,36 @@
-.loading-container {
-    position: fixed;
+.loading-container
+{
+   
+    pointer-events: none;
+    position:fixed;
     z-index: 999;
 }
-
-.loading-background {
-    display: flex;
+.loading-background
+{ 
+    transition:all 2.0s ease-out;
+    display:flex;
     align-content: center;
     align-items: center;
     align-self: center;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(17, 17, 17);
-}
+    width:100vw;
+    height:100vh;
+    background:rgb(51, 51, 51);
 
+}
 .progress {
-    background: #333;
+    transition:all 0.4s ease-out;
+    background: rgb(51, 51, 51);
     border-radius: 13px;
     height: 5px;
     width: 300px;
 }
 
 .progress2 {
+    transition:all 0.4s ease-out;
     content: '';
     display: block;
-    background: rgb(0, 255, 128);
+    background: rgb(202, 196, 255);
     width: 9999;
     height: 100%;
     border-radius: 9px;
