@@ -34,7 +34,7 @@ function LandingTitle()
                         </div>
                     </div>
                
-                    <Button buttonStyle='btn--outline' externalLink={ true} path = 'https://www.theonteo.com/' >See More...</Button>
+                    <Button buttonStyle='btn--outline' externalLink={ true} path = 'https://www.theonteo.com/' >See More at theonteo.com</Button>
                 </div>
             </div>
         </div >
